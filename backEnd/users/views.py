@@ -6,13 +6,13 @@ from rest_framework import status
 from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import UserSerializer
-User = get_user_model()
+
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.hashers import make_password
 
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from django.db.models import F
-
+User = get_user_model()
 class UserBirthdayView(APIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [JWTAuthentication]
